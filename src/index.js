@@ -9,19 +9,19 @@ export default function genDiff(filepath1, filepath2) {
   
   const result = keys.map((key) => {
     if(!Object.hasOwn(data2, key)) {
-      return ` - ${key}: ${data1[key]}`;
+      return `  - ${key}: ${data1[key]}`;
     }
     
     if(!Object.hasOwn(data1, key)) {
-      return ` + ${key}: ${data2[key]}`;
+      return `  + ${key}: ${data2[key]}`;
     }
 
     if(_.isEqual(data1[key], data2[key])){
-      return `  ${key}: ${data1[key]}`;
+      return `    ${key}: ${data1[key]}`;
     }
 
-      return ` - ${key}: ${data1[key]}\n + ${key}: ${data2[key]}`;
+      return `  - ${key}: ${data1[key]}\r\n  + ${key}: ${data2[key]}`;
   });
 
-  return `{\n${result.join('\n')}\n}`;
+  return `{\r\n${result.join('\r\n')}\r\n}`;
 };

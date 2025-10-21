@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "test": "node tests/test.js"
+    "test": "jest",
+    "lint": "eslint ."
   },
   "bin": {
     "gendiff": "bin/gendiff.js"
@@ -24,5 +25,13 @@
   "dependencies": {
     "commander": "^14.0.1",
     "lodash": "^4.17.21"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.38.0",
+    "eslint": "^9.38.0",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.4.0",
+    "jest": "^30.2.0",
+    "typescript-eslint": "^8.46.1"
   }
 }
