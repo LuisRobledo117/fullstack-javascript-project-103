@@ -18,3 +18,14 @@ test('genDiff JSON plano', () => {
 
    expect(result.trim()).toEqual(expected.trim());
 });
+
+test('genDiff YAML plano', () => {
+   const file1 = getFixturePath('file1.yml');
+   const file2 = getFixturePath('file2.yml');
+   const expected = readFile('expected.txt');
+
+   const result = genDiff(file1, file2);
+
+   expect(result.trim()).toEqual(expected.trim());
+});
+

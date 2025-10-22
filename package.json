@@ -24,6 +24,7 @@
   "homepage": "https://github.com/LuisRobledo117/fullstack-javascript-project-103#readme",
   "dependencies": {
     "commander": "^14.0.1",
+    "js-yaml": "^4.1.0",
     "lodash": "^4.17.21"
   },
   "devDependencies": {
