@@ -1,6 +1,6 @@
 import parseFile from './parsers.js';
 import _ from 'lodash';
-import formatStylish from './formatters/stylish.js';
+import getFormatter from './formatters/selecFormatter.js';
 
 const buildDiff = (obj1, obj2) => {
    const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
@@ -22,10 +22,12 @@ const buildDiff = (obj1, obj2) => {
   });
 }
 
-export default function genDiff(filepath1, filepath2) {
+export default function genDiff(filepath1, filepath2, formatName = 'stylish') {
   const data1 = parseFile(filepath1);
   const data2 = parseFile(filepath2);
   
   const diff = buildDiff(data1, data2);
-  return formatStylish(diff);
+
+  const format = getFormatter(formatName);
+  return format(diff);
 };

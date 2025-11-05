@@ -3,3 +3,5 @@
 https://asciinema.org/a/2OKPdn0o2JduYML4BXNXVKEXS
 [![Maintainability](https://qlty.sh/gh/LuisRobledo117/projects/fullstack-javascript-project-103/maintainability.svg)](https://qlty.sh/gh/LuisRobledo117/projects/fullstack-javascript-project-103)
 https://asciinema.org/a/CCupBGvbPSfj57pHLRl1KpYgd
+https://asciinema.org/a/XJhNBrtV8unOVUYDu0UIyjGUd
+https://asciinema.org/a/vDKt4OHJ2p6HHcNpLXxpCJ1bG
