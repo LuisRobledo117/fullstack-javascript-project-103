@@ -16,7 +16,7 @@ const buildDiff = (obj1, obj2) => {
       return { key, type: 'nested', children: buildDiff(obj1[key], obj2[key]) };
     }
     if (!_.isEqual(obj1[key], obj2[key])) {
-      return { key, type: 'changed', obj1Value: obj1[key], obj2Value: obj2[key] };
+      return { key, type: 'changed', value1: obj1[key], value2: obj2[key] };
     }
     return { key, type: 'unchanged', value: obj1[key] };
   });
