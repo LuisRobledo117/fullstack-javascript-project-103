@@ -22,8 +22,8 @@ const formatStylish = (diff, depth = 1) => {
               return `${indent(depth)}  ${node.key}: ${stringity(node.value, depth)}`;
             case 'changed':
               return [
-                `${indent(depth)}- ${node.key}: ${stringity(node.obj1Value, depth)}`,
-                `${indent(depth)}+ ${node.key}: ${stringity(node.obj2Value, depth)}`,
+                `${indent(depth)}- ${node.key}: ${stringity(node.value1, depth)}`,
+                `${indent(depth)}+ ${node.key}: ${stringity(node.value2, depth)}`,
               ].join('\r\n');
             case 'nested':
               return `${indent(depth)}  ${node.key}: {\r\n${formatStylish(node.children, depth + 1)}\r\n${indent(depth)}  }`;

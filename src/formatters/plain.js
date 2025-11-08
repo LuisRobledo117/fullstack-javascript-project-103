@@ -15,7 +15,7 @@ const plain = (diff, parentPath = '') => {
       case 'removed':
         return `Property '${property}' was removed`;
       case 'changed':
-        return `Property '${property}' was updated. From ${formatValue(node.obj1Value)} to ${formatValue(node.obj2Value)}`;
+        return `Property '${property}' was updated. From ${formatValue(node.value1)} to ${formatValue(node.value2)}`;
       case 'nested':
         return plain(node.children, property);
       case 'unchanged':
