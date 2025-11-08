@@ -25,6 +25,6 @@ test('genDiff YAML Anidado', () => {
    const expected = readFile('expected.txt');
 
    const result = genDiff(file1, file2);
-   expect(result.trim()).toEqual(expected.trim());
+   expect(result).toEqual(expected);
 });
 
