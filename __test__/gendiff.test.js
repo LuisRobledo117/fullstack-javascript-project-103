@@ -32,9 +32,11 @@ test('gendiff yml', () => {
   const plainResult = readFile('expected_plain.txt');
   const jsonResult = readFile('expected_json.txt');
 
-  expect(genDiff(filepath1, filepath2)).toEqual(stylishResult);
-  expect(genDiff(filepath1, filepath2, 'stylish')).toEqual(stylishResult);
-  expect(genDiff(filepath1, filepath2, 'plain')).toEqual(plainResult);
-  expect(genDiff(filepath1, filepath2, 'json')).toEqual(jsonResult);
+  const normalize = (text) => text.replace(/\r\n/g, '\n');
+
+  expect(normalize(genDiff(filepath1, filepath2))).toEqual(normalize(stylishResult));
+  expect(normalize(genDiff(filepath1, filepath2, 'stylish'))).toEqual(normalize(stylishResult));
+  expect(normalize(genDiff(filepath1, filepath2, 'plain'))).toEqual(normalize(plainResult));
+  expect(normalize(genDiff(filepath1, filepath2, 'json'))).toEqual(normalize(jsonResult));
 });
 
