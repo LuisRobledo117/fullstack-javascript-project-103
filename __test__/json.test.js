@@ -10,7 +10,7 @@ const dirName = path.dirname(fileName);
 const getFixturePath = (filename) => path.join(dirName, '..', '__fixtures__', filename);
 const readFile = (filename) => fs.readFileSync(getFixturePath(filename), 'utf-8');
 
-const normalize = (str) => str.replace(/\r\n/g, '\n');
+const normalize = (str) => str.replace(/\n/g, '\r\n');
 
 describe('json formatter', () => {
   test('genDiff JSON Anidado', () => {
