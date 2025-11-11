@@ -25,7 +25,7 @@ const plain = (diff, parentPath = '') => {
     }
   });
 
-  return lines.join('\n');
+  return lines.join('\r\n');
 };
 
 export default plain;
