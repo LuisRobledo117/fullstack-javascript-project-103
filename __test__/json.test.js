@@ -21,4 +21,13 @@ describe('json formatter', () => {
   const result = normalize(genDiff(file1, file2, 'json'));
   expect(result).toBe(expected);
   });
+
+  test('genDiff YML Anidado', () => {
+  const file1 = getFixturePath('file1.yml');
+  const file2 = getFixturePath('file2.yml');
+  const expected = normalize(readFile('expected_json.txt'));
+
+  const result = normalize(genDiff(file1, file2, 'json'));
+  expect(result).toBe(expected);
+  });
 });

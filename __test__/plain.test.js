@@ -20,4 +20,13 @@ describe('plain formatter', () => {
     const result = genDiff(file1, file2, 'plain');
     expect(result).toBe(expected);
   });
+
+  test('genDiff YML Anidado', () => {
+   const file1 = getFixturePath('file1.yml');
+   const file2 = getFixturePath('file2.yml');
+    const expected = readFile('expected_plain.txt');
+
+    const result = genDiff(file1, file2, 'plain');
+    expect(result).toBe(expected);
+  });
 });
