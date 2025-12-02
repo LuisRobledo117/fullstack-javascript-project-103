@@ -8,7 +8,7 @@ const stringity = (value, depth) => {
     const entries = Object.entries(value)
       .map(([key, val]) => `${indent(depth + 1)}  ${key}: ${stringity(val, depth + 1)}`);
     
-    return `{\r\n${entries.join('\r\n')}\r\n${indent(depth)}  }`;
+    return `{\n${entries.join('\n')}\n${indent(depth)}  }`;
 };
 
 const formatStylish = (diff, depth = 1) => {
@@ -24,15 +24,15 @@ const formatStylish = (diff, depth = 1) => {
               return [
                 `${indent(depth)}- ${node.key}: ${stringity(node.value1, depth)}`,
                 `${indent(depth)}+ ${node.key}: ${stringity(node.value2, depth)}`,
-              ].join('\r\n');
+              ].join('\n');
             case 'nested':
-              return `${indent(depth)}  ${node.key}: {\r\n${formatStylish(node.children, depth + 1)}\r\n${indent(depth)}  }`;
+              return `${indent(depth)}  ${node.key}: {\n${formatStylish(node.children, depth + 1)}\n${indent(depth)}  }`;
             default:
               throw new Error(`Unknown type: ${node.type}`);
         }
     });
 
-    return lines.join('\r\n');
+    return lines.join('\n');
 };
 
-export default (diff) => `{\r\n${formatStylish(diff)}\r\n}`;
+export default (diff) => `{\n${formatStylish(diff)}\n}`;

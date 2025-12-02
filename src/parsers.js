@@ -10,7 +10,7 @@ export default function parseFile(filepath) {
 
   const ext = path.extname(filepath);
 
-    if (ext === '.yml' || ext === '.yaml') {
+  if (ext === '.yml' || ext === '.yaml') {
     return yaml.load(fileContent);
   }
 
