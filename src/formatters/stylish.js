@@ -26,7 +26,7 @@ const formatStylish = (diff, depth = 1) => {
                 `${indent(depth)}+ ${node.key}: ${stringity(node.value2, depth)}`,
               ].join('\r\n');
             case 'nested':
-              return `${indent(depth)}  ${node.key}: {\r\n${formatStylish(node.children, depth + 1)}\r\n${indent(depth)}}`;
+              return `${indent(depth)}  ${node.key}: {\r\n${formatStylish(node.children, depth + 1)}\r\n${indent(depth)}  }`;
             default:
               throw new Error(`Unknown type: ${node.type}`);
         }
