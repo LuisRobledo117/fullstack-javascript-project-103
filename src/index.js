@@ -1,5 +1,5 @@
-import parseFile from './parsers.js';
 import _ from 'lodash';
+import parseFile from './parsers.js';
 import getFormatter from './formatters/selecFormatter.js';
 
 const buildDiff = (obj1, obj2) => {
@@ -30,4 +30,4 @@ export default function genDiff(filepath1, filepath2, formatName = 'stylish') {
 
   const format = getFormatter(formatName);
   return format(diff);
-};
+}

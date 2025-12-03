@@ -39,4 +39,3 @@ test('gendiff yml', () => {
   expect(normalize(genDiff(filepath1, filepath2, 'plain'))).toEqual(normalize(plainResult));
   expect(normalize(genDiff(filepath1, filepath2, 'json'))).toEqual(normalize(jsonResult));
 });
-

@@ -14,7 +14,7 @@ const stringity = (value, depth) => {
 const formatStylish = (diff, depth = 1) => {
   const lines = diff.map((node) => {
     switch (node.type) {
-      case 'added' :
+      case 'added':
         return `${indent(depth)}+ ${node.key}: ${stringity(node.value, depth)}`;
       case 'removed':
         return `${indent(depth)}- ${node.key}: ${stringity(node.value, depth)}`;

@@ -2,7 +2,6 @@ import formatStylish from './stylish.js';
 import formatPlain from './plain.js';
 import json from './json.js';
 
-
 const getFormatter = (formatName) => {
   switch (formatName) {
     case 'stylish':
@@ -15,5 +14,4 @@ const getFormatter = (formatName) => {
       throw new Error(`Unknown format: ${formatName}`);
   }
 };
-
 export default getFormatter;
