@@ -3,8 +3,8 @@ import _ from 'lodash';
 import getFormatter from './formatters/selecFormatter.js';
 
 const buildDiff = (obj1, obj2) => {
-   const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
-  
+  const keys = _.sortBy(_.union(Object.keys(obj1), Object.keys(obj2)));
+
   return keys.map((key) => {
     if (!_.has(obj2, key)) {
       return { key, type: 'removed', value: obj1[key] };
@@ -20,12 +20,12 @@ const buildDiff = (obj1, obj2) => {
     }
     return { key, type: 'unchanged', value: obj1[key] };
   });
-}
+};
 
 export default function genDiff(filepath1, filepath2, formatName = 'stylish') {
   const data1 = parseFile(filepath1);
   const data2 = parseFile(filepath2);
-  
+
   const diff = buildDiff(data1, data2);
 
   const format = getFormatter(formatName);
