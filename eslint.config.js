@@ -3,11 +3,17 @@ import globals from 'globals';
 
 export default [
   {
+    ignores: ['node_modules/', 'dist/'],
+  },
+  {
     files: ['**/*.{js,mjs,cjs}'],
-    plugins: { js },
-    extends: ['js/recommended'],
-    languageOptions: { globals: globals.browser },
+    languageOptions: {
+      globals: globals.browser,
+      ecmaVersion: 2021,
+      sourceType: 'module',
+    },
     rules: {
+      ...js.configs.recommended.rules,
       // Reglas de indentación
       indent: ['error', 2, { SwitchCase: 1 }],
 
